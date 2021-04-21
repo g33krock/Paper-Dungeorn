@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parker's Page</title>
+        <link rel="stylesheet" href="/resources/css/styles.css">
+        <script src = "/resources/characters.js"></script>
+        <script src = "/resources/fight.js"></script>
+        <script src = "/resources/init.js"></script>
+        <script src = "/resources/select.js"></script>
+        <script src = "/resources/order.js"></script>
+        <script src = "/resources/target.js"></script>
+    </head>
+    <body onload="initCards()">
+      <div id="myContainer">
+        
+        <div id="mpunch"></div>
+        <div id="mstats">
+            <div id="mclass"></div>
+            <div id="mhealth"></div>
+            <div id="mtarget"></div>
+            <div id="maction"></div>
+            <div id="mdamage"></div>
+        </div>
+          
+      
+        <div id="p1punch" onclick="player(p1Status, p2Status, p3Status, p1Punch, p2Punch, p3Punch)"></div>
+        <div id="p1stats">
+          <div id="p1class"></div>
+          <div id="p1health"></div>
+          <div id="p1aggro"></div>
+          <div id="p1action"></div>
+          <div id="p1val"></div>
+        </div>
+        <div class="card" id="p1NO1z" onclick="player1Attack1()">
+          <div id="p1NO1"></div>
+        </div>
+        <div class="card" id="p1NO2z" onclick="player1Attack2()">
+          <div id="p1NO2"></div>
+        </div>
+          
+        
+        <div id="p2punch" onclick="player(p2Status, p1Status, p3Status, p2Punch, p1Punch, p3Punch)"></div>
+        <div id="p2stats">
+          <div id="p2class"></div>
+          <div id="p2health"></div>
+          <div id="p2aggro"></div>
+          <div id="p2action"></div>
+          <div id="p2val"></div>
+        </div>
+        <div class="card" id="p2NO1z" onclick="player2Attack1()">
+          <div id="p2NO1"></div>
+        </div>
+        <div class="card" id="p2NO2z" onclick="player2Attack2()">
+          <div id="p2NO2"></div>
+        </div>
+          
+        
+        <div id="p3punch" onclick="player(p3Status, p2Status, p1Status, p3Punch, p2Punch, p1Punch)"></div>
+        <div id="p3stats">
+          <div id="p3class"></div>
+          <div id="p3health"></div>
+          <div id="p3aggro"></div>
+          <div id="p3action"></div>
+          <div id="p3val"></div>
+        </div>
+        <div class="card" id="p3NO1z" onclick="player3Attack1()">
+          <div id="p3NO1"></div>
+        </div>
+        <div class="card" id="p3NO2z" onclick="player3Attack2()">
+          <div id="p3NO2"></div>
+        </div>
+        <div id="empty"></div>
+        <button onclick="fight()">Fight!</button>
+        <h2 id="horse"></h2>
+        <button id="targetp1" onclick="p1Target()">Warrior</button>
+        <button id="targetp2" onclick="p2Target()">Priest</button>
+        <button id="targetp3" onclick="p3Target()">Rogue</button>
+        <button id="targetm" onclick="mTarget()">Monster</button>
+      </div>  
+    </body>
+</html>

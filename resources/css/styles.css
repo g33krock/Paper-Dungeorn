@@ -1,0 +1,261 @@
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.flex-container > div {
+  width: 33%;
+  margin: 2px;
+  text-align: center;
+  line-height: 10px;
+  font-size: 20px;
+  
+}
+
+  
+  #myContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url('../images/dungeon.png');
+    
+    background-position: center;
+    display: grid;
+    grid-template-columns: 'auto auto auto auto auto auto';
+    grid-template-rows: 'auto auto auto auto auto';
+    grid-template-areas: 
+    'empty6 empty6 targetp1 targetp2 targetp3 targetm empty7 empty7 empty7' 
+    'empty4 empty4 empty4 mpunch mpunch mstats mstats empty5 empty5'
+    'p1punch p1punch p1stats p2punch p2punch p2stats p3punch p3punch p3stats'
+    'card1 card1 empty1 card2 card2 empty2 card3 card3 empty3'
+    'p1NO1z p1NO2z empty1 p2NO1z p2NO2z empty2 p3NO1z p3NO2z empty3'
+    ;
+    justify-content: center;
+
+  }
+  .card {
+    width: 75px;
+    font-size: 10px;
+    position: absolute;
+  }
+  .card:active {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  .active {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  .p1selected {
+    background-color: green;
+  }
+  .p2selected {
+    background-color: yellow;
+  }
+  .p3selected {
+    background-color: blue;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); background-image: url("../images/selected.png"); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); background-image: url("../images/selected2.png"); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); background-image: url("../images/selected3.png"); }
+    30% { transform: translate(3px, 2px) rotate(0deg); background-image: url("../images/selected.png");}
+    40% { transform: translate(1px, -1px) rotate(1deg); background-image: url("../images/selected2.png");}
+    50% { transform: translate(-1px, 2px) rotate(-1deg); background-image: url("../images/selected3.png");}
+    60% { transform: translate(-3px, 1px) rotate(0deg); background-image: url("../images/selected.png");}
+    70% { transform: translate(3px, 1px) rotate(-1deg); background-image: url("../images/selected2.png");}
+    80% { transform: translate(-1px, -1px) rotate(1deg); background-image: url("../images/selected3.png");}
+    90% { transform: translate(1px, 2px) rotate(0deg); background-image: url("../images/selected.png");}
+    100% { transform: translate(1px, -2px) rotate(-1deg); background-image: url("../images/selected2.png");}
+  }
+  .health-box {
+  background-color: #ccc;
+  height: 30px;
+  width: 500px;
+  margin: 0 auto;
+  border: solid 1px #aaa;
+}
+
+.health-bar {
+  background-color: #007f00;
+  width: inherit;
+  height: 28px;
+  position: relative;
+  bottom: 56px;
+}
+
+.health-bar-red {
+  width: 100%;
+  height: 100%;
+  background-color: #cc0000;
+}
+
+.health-bar-blue {
+  width: 100%;
+  height: 100%;
+  background-color: #3bd3df;
+  bottom: 28px;
+  position: relative;
+}
+
+.health-bar-text {
+  position: relative;
+  bottom: 80px;
+}
+
+.message-box {
+  text-align: center;
+  padding: 5px;
+}
+
+.total,
+.message-box {
+  font-size: 16px;
+  margin: 5px;
+}
+
+#mpunch {
+  grid-area: mpunch;
+  display: grid;
+    grid-template-areas: 
+    'mclass';
+    justify-content: center;
+    position: relative;
+}
+#mclass {grid-area: mclass;}
+#mhealth {grid-area: mhealth;}
+#mtarget {grid-area: mtarget;}
+#maction {grid-area: maction;}
+#mdamage {grid-area: mdamage;}
+#empty1 {grid-area: empty1;}
+#empty2 {grid-area: empty2;}
+#empty3 {grid-area: empty3;}
+#empty4 {grid-area: empty4;}
+#empty5 {grid-area: empty5;}
+#empty6 {grid-area: empty6;}
+#empty7 {grid-area: empty7;}
+#p1punch {
+  grid-area: p1punch;
+    justify-content: center;
+    position: relative;
+}
+#p1class {grid-area: p1class;}
+#p1health {grid-area: p1health;}
+#p1target {grid-area: p1target;}
+#p1action {grid-area: p1action;}
+#p1aggro {grid-area: p1aggro;}
+#p1val {grid-area: p1val;}
+#card1 {grid-area: card1;}
+#card1img {grid-area: card1img;}
+#p1NO1 {grid-area: p1NO1;
+  position: relative;
+  right: 0px;
+}
+#p1NO1z {grid-area: p1NO1z;
+  position: relative;
+  bottom:0px;
+}
+#p1NO2 {grid-area: p1NO2;
+  position: relative;
+}
+#p1NO2z {grid-area: p1NO2z;
+  position: relative;
+  bottom:0px;
+}
+#p2punch {
+  grid-area: p2punch;
+    justify-content: center;
+    position: relative;
+}
+#p2class {grid-area: p2class;}
+#p2health {grid-area: p2health;}
+#p2target {grid-area: p2target;}
+#p2action {grid-area: p2action;}
+#p2aggro {grid-area: p2aggro;}
+#p2val {grid-area: p2val;}
+#card2 {grid-area: card2;}
+#card2img {grid-area: card2img;}
+#p2NO1 {grid-area: p2NO1;}
+#p2NO1z {grid-area: p2NO1z;}
+#p2NO2 {grid-area: p2NO2;}
+#p2NO2z {grid-area: p2NO2z;}
+#p3punch {
+  grid-area: p3punch;
+    justify-content: center;
+    position: relative;
+}
+#p3class {grid-area: p3class;}
+#p3health {grid-area: p3health;}
+#p3target {grid-area: p3target;}
+#p3action {grid-area: p3action;}
+#p3aggro {grid-area: p3aggro;}
+#p3val {grid-area: p3val;}
+#card3 {grid-area: card3;}
+#card3img {grid-area: card3img;}
+#p3NO1 {grid-area: p3NO1;}
+#p3NO1z {grid-area: p3NO1z;}
+#p3NO2 {grid-area: p3NO2;}
+#p3NO2z {grid-area: p3NO2z;}
+#horse {grid-area: horse;}
+#targetp1 {grid-area: targetp1;}
+#targetp2 {grid-area: targetp2;}
+#targetp3 {grid-area: targetp3;}
+#targetm {grid-area: targetm;}
+#p1stats {
+  background-color:rgba(0,255,0,0.3);
+  grid-area: p1stats;
+  position: relative;
+  display: grid;
+  grid-template-rows: 'auto auto auto auto';
+  grid-template-areas: 
+  'p1health'
+  'p1class'
+  'p1action'
+  'p1val'
+  'p1aggro';
+  justify-content: left;
+}
+#p2stats {
+  background-color: rgba(251, 255, 0, 0.534);
+  grid-area: p2stats;
+  position: relative;
+  display: grid;
+  grid-template-rows: 'auto auto auto auto';
+  grid-template-areas: 
+  'p2health'
+  'p2class'
+  'p2action'
+  'p2val'
+  'p2aggro';
+  justify-content: left;
+}
+#p3stats {
+  background-color: rgba(0, 38, 255, 0.397);
+  grid-area: p3stats;
+  position: relative;
+  display: grid;
+  grid-template-rows: 'auto auto auto auto';
+  grid-template-areas: 
+  'p3health'
+  'p3class'
+  'p3action'
+  'p3val'
+  'p3aggro';
+  justify-content: left;
+}
+#mstats {
+  background-color:  rgba(255, 0, 0, 0.534);
+  grid-area: mstats;
+  position: relative;
+  display: grid;
+  grid-template-areas: 
+  'mhealth'
+  'mtarget'
+  'maction'
+  'mdamage'
+  'mclass';
+  justify-content: center;
+}
+
